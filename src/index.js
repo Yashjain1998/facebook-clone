@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Createaccount,Resetpassword } from "./createaccount";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <Router>
+      <Routes>
+        <Route exact path="/" element={<App />} />
+        {/* Add more routes here */}
+        <Route exact path="/resetpassword" element={<Resetpassword />} />
+        <Route exact path="/createaccount" element={<Createaccount />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
